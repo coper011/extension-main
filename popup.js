@@ -1,5 +1,6 @@
 var retro = new Audio('bells.mp3');
 var click = new Audio('click.wav');
+var papertoss = new Audio('papertoss.mp3');
 
 document.addEventListener("DOMContentLoaded", function(){
     const input = document.getElementById("myMessage");
@@ -18,6 +19,7 @@ document.addEventListener("DOMContentLoaded", function(){
             chrome.storage.local.set({userArray: userArray}, function(){
                 console.log("Loaded data: ", result);
                 click.play();
+                papertoss.play();
                 renderList(userArray);
                 input.value = "";
             });
