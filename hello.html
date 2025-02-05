@@ -6,16 +6,25 @@
   <title>Document</title>
 </head>
 <body>
-  <script src="popup.js"></script>
-  <link rel="stylesheet" href="styles.css">
-  <h1>Dear Future Me...</h1>
-  <p>click the jar!</p><br>
-  <button id="choose"><img src="jar.png"/></button>
-  <input type="text" id="myMessage" placeholder="type here..."/><br>
-  <button id="save">put it in</button>
-  <div id="randomDisplay">
-    loading...
+  <div id="hello">
+    <script src="popup.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <h1>Dear Future Me...</h1>
+    <p>click the jar!</p><br>
+    <button id="choose"><img src="jar.png"/></button>
+    <input type="text" id="myMessage" placeholder="type here..."/><br>
+    <button id="save">put it in</button>
+    <ul id="jar"></ul>
+    <button id="clear">clear list</button>
+    <img src="notepad.png"/>
   </div>
-  <ul id="jar"></ul>
+
+  <div id="note">
+    <link rel="stylesheet" href="styles.css">
+    <div id="randomDisplay">
+        loading...
+    </div>
+    <button id="back"><img src="backarrow.png"/></button>
+  </div>
 </body>
 </html>

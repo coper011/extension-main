@@ -1,9 +1,16 @@
 h1 {
     color: #B35061;
 }
+html{
+    min-width: 280px;
+    min-height: 480px;
+}
 body {
     text-align: center;
     background-color: #E8C8C8;
+    margin: 0;
+    min-width: 280px;
+    min-height: 480px;
 }
 img {
     margin-right: 50px;
@@ -15,4 +22,16 @@ img {
 }
 p{
     color: #FFF5F7;
+}
+#hello{
+    display: block;
+}
+#note{
+    background-image: url("binder.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: none;
+    height: 100%;
+    min-width: 280px;
+    min-height: 480px;
 }
