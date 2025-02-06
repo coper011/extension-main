@@ -9,22 +9,33 @@
   <div id="hello">
     <script src="popup.js"></script>
     <link rel="stylesheet" href="styles.css">
-    <h1>Dear Future Me...</h1>
-    <p>click the jar!</p><br>
-    <button id="choose"><img src="jar.png"/></button>
-    <input type="text" id="myMessage" placeholder="type here..."/><br>
-    <button id="save">put it in</button>
-    <ul id="jar"></ul>
-    <button id="clear">clear list</button>
-    <img src="notepad.png"/>
+    <h1 style="color: #B35061; font-size: 50px; margin-bottom: 0px; margin-top: 10px;">Dear</h1>
+    <h1 style="color: #B35061; font-size: 50px; margin-bottom: -10px; margin-top: -10px;">future me,</h1><br>
+    <p style="color: #FFF5F7; font-size: 20px; margin: 0;">click the jar!</p>
+    <button id="choose"><img src="jar.png" style="margin-right: 60px; margin-left: 80px;"/></button>
+    <input type="text" id="myMessage" placeholder="type here..." style="background-color: #FAEAED; font-size: 30px; border: 0; color:#B35061; width: 80%; margin-top: -10px; margin-bottom: 17px;" /><br>
+    <div style="display: flex;" class="helloChild">
+      <div style="flex: 1; justify-content: center;"></div>
+      <div style="flex: 2; justify-content: center;">
+          <button id="save" style="font-size: 30px; color: #FAEAED; background-color: #AD7044; border-right: 5px solid #915237; border-bottom: 5px solid #915237; margin-bottom: 17px;">put it in!</button>
+      </div>
+      <div style="flex: 1; justify-content: center;">
+          <button id="toNotebook"><img src="notepad.png"/></button>
+      </div>
+    </div>
   </div>
 
   <div id="note">
-    <link rel="stylesheet" href="styles.css">
     <div id="randomDisplay">
         loading...
     </div>
     <button id="back"><img src="backarrow.png"/></button>
+  </div>
+
+  <div id="notebook">
+    <ul id="jar"></ul>
+    <button id="clear">clear list</button>
+    <button id="back2"><img src="backarrow.png"/></button>
   </div>
 </body>
 </html>

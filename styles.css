@@ -1,32 +1,37 @@
-h1 {
-    color: #B35061;
+@font-face {
+    font-family: 'pixel';
+    src: url('pixelify.ttf') format('woff2');
+    font-weight: normal;
+    font-style: normal; 
 }
 html{
     min-width: 280px;
     min-height: 480px;
+    
 }
 body {
     text-align: center;
-    background-color: #E8C8C8;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("plaid.png");
     margin: 0;
     min-width: 280px;
     min-height: 480px;
-}
-img {
-    margin-right: 50px;
-    margin-left: 50px;
+    font-family: 'pixel', sans-serif;
+    
 }
 #choose {
     background-color: transparent;
     border: none;
 }
-p{
-    color: #FFF5F7;
-}
 #hello{
     display: block;
+    height: 100%;
+    min-width: 280px;
+    min-height: 480px;
+    margin: 0;
 }
-#note{
+#note, #notebook{
     background-image: url("binder.png");
     background-repeat: no-repeat;
     background-size: cover;
@@ -34,4 +39,17 @@ p{
     height: 100%;
     min-width: 280px;
     min-height: 480px;
+}
+::placeholder{
+    font-family: 'pixel', sans-serif;
+    color: #DBACB4;
+}
+button, input{
+    font-family: 'pixel', sans-serif;
+    background-color: transparent;
+    border: none;
+}
+ul {
+    margin: 0;
+    padding: 0;
 }
