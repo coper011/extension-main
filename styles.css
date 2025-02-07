@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'pixel';
-    src: url('pixelify.ttf') format('woff2');
+    src: url('assets/fonts/pixelify.ttf') format('woff2');
     font-weight: normal;
     font-style: normal; 
 }
@@ -13,7 +13,7 @@ body {
     text-align: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: url("plaid.png");
+    background-image: url("assets/images/plaid.png");
     margin: 0;
     min-width: 280px;
     min-height: 480px;
@@ -32,13 +32,13 @@ body {
     margin: 0;
 }
 #note, #notebook{
-    background-image: url("binder.png");
+    background-image: url("assets/images/binder.png");
     background-repeat: no-repeat;
     background-size: cover;
     display: none;
     height: 100%;
     min-width: 280px;
-    min-height: 480px;
+    min-height: 100vh;
 }
 ::placeholder{
     font-family: 'pixel', sans-serif;

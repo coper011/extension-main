@@ -1,8 +1,8 @@
-var retro = new Audio('bells.mp3');
-var click = new Audio('click.wav');
-var papertoss = new Audio('papertoss.mp3');
-var paper1 = new Audio('paper1.mp3');
-var cork = new Audio('cork.mp3');
+var retro = new Audio('assets/sfx/bells.mp3');
+var click = new Audio('assets/sfx/click.wav');
+var papertoss = new Audio('assets/sfx/papertoss.mp3');
+var paper1 = new Audio('assets/sfx/paper1.mp3');
+var cork = new Audio('assets/sfx/cork.mp3');
 
 document.addEventListener("DOMContentLoaded", function(){
     const input = document.getElementById("myMessage");
@@ -41,8 +41,9 @@ document.addEventListener("DOMContentLoaded", function(){
             li.textContent = message.content + " date: " + message.day;
             jarList.appendChild(li);
             console.log("list rendered");
-            console.log(typeof day);
+            return;
         });
+        console.log("list rendered??");
     }
     const chooseButton = document.getElementById("choose");
     chooseButton.addEventListener("click", function(){
@@ -55,6 +56,7 @@ document.addEventListener("DOMContentLoaded", function(){
             }
             let num = Math.floor(Math.random() * userArray.length);
             document.getElementById("randomDisplay").textContent = userArray[num].content;
+            document.getElementById("dateDisplay").textContent = userArray[num].day;
         });
     });
     const noteBookButton = document.getElementById("toNotebook");
@@ -66,9 +68,10 @@ document.addEventListener("DOMContentLoaded", function(){
     const clearButton = document.getElementById("clear");
     clearButton.addEventListener("click", function(){
         chrome.storage.local.get(["userArray"], function(result){
+            click.play();
             let userArray = result.userArray || [];
             chrome.storage.local.set({userArray: []}, function(){
-                renderList(userArray);
+                renderList([]);
                 console.log("List cleared");
             });
         });
