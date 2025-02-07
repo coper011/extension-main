@@ -1,2 +1,7 @@
-# extension
-wow this is a chrome extension
+# extension-main
+my first attempt at chrome extensions!
+
+dear future me,
+- write short messages documenting your life
+- look back at any time!
+- generate random messages 
