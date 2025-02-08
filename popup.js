@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function(){
         });
     });
     
-    /*
+    
     const clearButton = document.getElementById("clear");
     clearButton.addEventListener("click", function(){
         chrome.storage.local.get(["userArray"], function(result){
@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", function(){
         });
         
     });
-    */
+    
     
     const backButton = document.getElementById("back");
     backButton.addEventListener("click", switchToHello);
