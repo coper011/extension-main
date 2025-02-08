@@ -9,12 +9,7 @@ document.addEventListener("DOMContentLoaded", function(){
     const input = document.getElementById("myMessage");
     const button = document.getElementById("save");
     //const jarList = document.getElementById("jar");
-    //load data
-    chrome.storage.local.get(["userArray"], function(result){
-        let userArray = result.userArray || [];
-        //renderList(userArray);
-        console.log("data loaded");
-    });
+    
     //save message
     button.addEventListener("click", function(){
         chrome.storage.local.get(["userArray"], function(result){
@@ -35,6 +30,7 @@ document.addEventListener("DOMContentLoaded", function(){
         });
     });
     //display list
+    /*
     function renderList(messages){
         jarList.innerHTML= "";
         messages.forEach(message => {
@@ -46,6 +42,7 @@ document.addEventListener("DOMContentLoaded", function(){
         });
         console.log("list rendered??");
     }
+    */
     const chooseButton = document.getElementById("choose");
     chooseButton.addEventListener("click", function(){
         chrome.storage.local.get(["userArray"], function(result){
@@ -60,14 +57,7 @@ document.addEventListener("DOMContentLoaded", function(){
             document.getElementById("dateDisplay").textContent = userArray[num].day;
         });
     });
-    const noteBookButton = document.getElementById("toNotebook");
-    noteBookButton.addEventListener("click", function(){
-        chrome.storage.local.get(["userArray"], function(result){
-            switchToNotebook();
-            let userArray = result.userArray || [];
-            renderNote(userArray, currentIndex);
-        });
-    });
+    
     /*
     const clearButton = document.getElementById("clear");
     clearButton.addEventListener("click", function(){
@@ -82,28 +72,53 @@ document.addEventListener("DOMContentLoaded", function(){
         
     });
     */
+    
     const backButton = document.getElementById("back");
     backButton.addEventListener("click", switchToHello);
     const backButton2 = document.getElementById("back2");
     backButton2.addEventListener("click", switchToHello);
-
+    
     //pg numbers and arrows, text display
     let currentIndex = 0;
     chrome.storage.local.get(["userArray"], function(result){
-        let userArray = result.userArray || [];
-        renderNote(userArray, currentIndex);
+        let userArray1 = result.userArray || [];
+        renderNote(userArray1, currentIndex);
     });
+    const noteBookButton = document.getElementById("toNotebook");
+    noteBookButton.addEventListener("click", function(){
+        chrome.storage.local.get(["userArray"], function(result){
+            switchToNotebook();
+            let userArray1 = result.userArray || [];
+            renderNote(userArray1, currentIndex);
+            console.log("render noted at click");
+        });
+    });
+    /*
+    const deleteButton = document.getElementById("delete");
+    deleteButton.addEventListener("click", function(){
+        papertoss.play();
+        chrome.storage.local.get(["userArray"], function(result){
+            let userArray1 = userArray || [];
+            userArray1.splice(currentIndex, 1);
+            chrome.storage.local.set({userArray: userArray1}, function(){
+                console.log("note deleted");
+                renderNote(userArray1, currentIndex);
+            });
+        });
+        
+    });
+    */
     const pageLeft = document.getElementById("leftArrow");
     pageLeft.addEventListener("click", function(){
         console.log("left pg clicked");
         flip.play();
         chrome.storage.local.get(["userArray"], function(result){
-            let userArray = result.userArray || [];
+            let userArray1 = result.userArray || [];
             currentIndex -= 1;
             if (currentIndex < 0){
-                currentIndex = userArray.length - 1;
+                currentIndex = userArray1.length - 1;
             } 
-            renderNote(userArray, currentIndex);
+            renderNote(userArray1, currentIndex);
         });
     });
     const pageRight = document.getElementById("rightArrow");
@@ -111,12 +126,12 @@ document.addEventListener("DOMContentLoaded", function(){
         console.log("right pg clicked");
         flip.play();
         chrome.storage.local.get(["userArray"], function(result){
-            let userArray = result.userArray || [];
+            let userArray1 = result.userArray || [];
             currentIndex += 1;
-            if (currentIndex > userArray.length - 1){
+            if (currentIndex > userArray1.length - 1){
                 currentIndex = 0;
             } 
-            renderNote(userArray, currentIndex);
+            renderNote(userArray1, currentIndex);
         });
     });
     function renderNote(userArray, idx){
